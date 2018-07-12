@@ -1,0 +1,96 @@
+package dao;
+
+import java.sql.Connection;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.mysql.jdbc.PreparedStatement;
+
+import model.OrderManagement;
+
+public class OrderManagementDAOImpl implements OrderManagementDAO {
+	
+	private DataSource ds;
+	
+	public void setDs(DataSource ds) {
+		this.ds = ds;
+	}
+	
+	private JdbcTemplate jt;
+	
+	public void setJt(JdbcTemplate jt) {
+		this.jt = jt;
+	}
+
+	@Override
+	public OrderManagement findOrderById(int id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<OrderManagement> findAll() throws Exception {
+		Connection con=ds.getConnection();
+		
+		
+		
+		con.close();
+		return null;
+	}
+
+	@Override
+	public int saveOrder(OrderManagement ord) throws Exception {
+		// TODO Auto-generated method stub
+		Connection con=ds.getConnection();
+		
+		PreparedStatement ps= (PreparedStatement) con.prepareStatement("Insert into ordermanagement values(?,?,?,?,?)");
+		
+		ps.setInt(1, ord.getOrderId());
+		ps.setString(2, ord.getOrderedProduct());
+		ps.setInt(3, ord.getOrderedItems());
+		ps.setString(4, ord.getConsumerEmail());
+		ps.setDouble(5, ord.getBillamount());
+		
+		int pk=ps.executeUpdate();
+		
+		con.close();
+		
+		return pk;
+		
+		
+	}
+
+	@Override
+	public boolean updateOrder(OrderManagement ord) throws Exception {
+		// implementation to be done
+		return false;
+	}
+
+	@Override
+	public boolean deleteOrder(OrderManagement ord) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public List<OrderManagement> findByName(String orderedProduct) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OrderManagement findByEmail(String email) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
