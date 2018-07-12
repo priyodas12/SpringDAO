@@ -1,0 +1,45 @@
+package model;
+
+import java.util.Date;
+
+public class OrderManagement {
+	
+	private int orderId;
+	private String orderedProduct;
+	private int orderedItems;
+	private String consumerEmail;
+	//private Date delivaryDate;
+	private double billamount;
+	
+	public int getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+	public String getOrderedProduct() {
+		return orderedProduct;
+	}
+	public void setOrderedProduct(String orderedProduct) {
+		this.orderedProduct = orderedProduct;
+	}
+	public int getOrderedItems() {
+		return orderedItems;
+	}
+	public void setOrderedItems(int orderedItems) {
+		this.orderedItems = orderedItems;
+	}
+	public String getConsumerEmail() {
+		return consumerEmail;
+	}
+	public void setConsumerEmail(String consumerEmail) {
+		this.consumerEmail = consumerEmail;
+	}
+	public double getBillamount() {
+		return billamount;
+	}
+	public void setBillamount(double billamount) {
+		this.billamount = billamount;
+	}
+	
+}
