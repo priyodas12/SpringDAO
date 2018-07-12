@@ -1,0 +1,15 @@
+package dao;
+
+import java.util.List;
+
+import model.OrderManagement;
+
+public interface OrderManagementDAO {
+	
+	public int saveOrder(OrderManagement ord) throws Exception;
+	public boolean updateOrder(OrderManagement ord) throws Exception;
+	public boolean deleteOrder(OrderManagement ord) throws Exception;
+	public OrderManagement findOrder(int id) throws Exception;
+	public List<OrderManagement> findByName(String orderedProduct) throws Exception;
+	public OrderManagement findByEmail(String email)throws Exception;
+}
