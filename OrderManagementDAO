@@ -12,4 +12,5 @@ public interface OrderManagementDAO {
 	public OrderManagement findOrder(int id) throws Exception;
 	public List<OrderManagement> findByName(String orderedProduct) throws Exception;
 	public OrderManagement findByEmail(String email)throws Exception;
+	public List<OrderManagement> findAll() throws Exception;
 }
