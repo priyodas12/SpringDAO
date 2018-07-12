@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="bds" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/Order" />
+		<property name="username" value="root" />
+		<property name="password" value="Priyo123"/>
+		<property name="maxActiveConnection" value="15"/>
+		<property name="minIdleConnection" value="5"/>
+		<property name="maxWaitTime" value="1000*5"></property>
+	</bean>
+	<bean id="dao" class="dao.OrderManagementDAOImpl">
+		<property name="ds" ref="bds"></property>
+	</bean>
+</beans>
