@@ -34,9 +34,6 @@ public class OrderManagementDAOImpl implements OrderManagementDAO {
 	@Override
 	public List<OrderManagement> findAll() throws Exception {
 		Connection con=ds.getConnection();
-		
-		
-		
 		con.close();
 		return null;
 	}
